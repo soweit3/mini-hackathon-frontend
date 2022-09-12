@@ -60,6 +60,13 @@ h3{
 	text-align: center;
 
 }
+p{
+  color: #fff;
+	font-size: 10pt;
+	text-align: start;
+  font-family: 'Roboto', sans-serif;
+
+}
   
   *, *:before, *:after {
     box-sizing: inherit;

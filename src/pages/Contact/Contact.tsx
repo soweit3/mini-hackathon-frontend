@@ -6,6 +6,8 @@ export const Contact: React.FC = () => {
         <h3>realemail@unnamedprivacy.co</h3>
         <h2>Phone:</h2>
         <h3>+61 888 444</h3>
+        <h2>Address:</h2>
+        <h3>123 Real Road, Real Place, 0987, QLD, Australia</h3>
         
         </>
 

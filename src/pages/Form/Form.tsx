@@ -20,7 +20,7 @@ const Form: React.FC = () => {
   const validationSchema = Yup.object().shape({
     fullname: Yup.string()
       .required("Fullname is required")
-      .matches(/[a-zA-Z]/, "Only letters and whitespace allowed"),
+      .matches(/.*/, "Only letters and whitespace allowed"),
     username: Yup.string()
       .required("Username is required")
       .min(6, "Username must be at least 6 characters")
@@ -29,12 +29,12 @@ const Form: React.FC = () => {
     password: Yup.string()
       .required("Password is required")
       .min(6, "Password must be at least 6 characters")
-      .max(40, "Password must not exceed 40 characters"),
+      .max(20, "Password must not exceed 40 characters"),
     confirmPassword: Yup.string()
       .required("Confirm Password is required")
       .oneOf([Yup.ref("password"), null], "Confirm Password does not match"),
     acceptTerms: Yup.bool().oneOf(
-      [true],
+      [false],
       "You must accept the terms to sign up."
     ),
   });
@@ -50,8 +50,8 @@ const Form: React.FC = () => {
 
   const onSubmit = (data: UserSubmitForm) => {
     const packet = JSON.stringify(data, null, 2);
-    const encodedPacket = new TextEncoder("windows-1252", {
-      NONSTANDARD_allowLegacyEncoding: true,
+    const encodedPacket = new TextEncoder("utf-8", {
+      NONSTANDARD_allowLegacyEncoding: false,
     }).encode(packet);
 
     fetch(`${IP_ADDRESS}/signup`, {
@@ -88,7 +88,7 @@ const Form: React.FC = () => {
         <div className="form-group">
           <label>Email</label>
           <input
-            type="text"
+            type="email"
             {...register("email")}
             className={`form-control ${errors.email ? "is-invalid" : ""}`}
           />
@@ -98,7 +98,7 @@ const Form: React.FC = () => {
         <div className="form-group">
           <label>Password</label>
           <input
-            type="password"
+            type="text"
             {...register("password")}
             className={`form-control ${errors.password ? "is-invalid" : ""}`}
           />
@@ -107,7 +107,7 @@ const Form: React.FC = () => {
         <div className="form-group">
           <label>Confirm Password</label>
           <input
-            type="password"
+            type="text"
             {...register("confirmPassword")}
             className={`form-control ${
               errors.confirmPassword ? "is-invalid" : ""
@@ -127,7 +127,7 @@ const Form: React.FC = () => {
             }`}
           />
           <label htmlFor="acceptTerms" className="form-check-label">
-            I have read and agree to the{" "}
+            I have bread and agreed to the{" "}
             <a href="/terms-and-conditions" >
               Terms
             </a>

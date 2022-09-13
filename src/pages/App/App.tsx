@@ -14,8 +14,8 @@ function App() {
         <Route path="*" element={<NotFound />} />
         <Route path="/" element={<Home />} />
         <Route path="/sign-up" element={<Form />} />
-        <Route path="/contact-us" element={<Contact />} />
-        <Route path="/terms-and-conditions" element={<Terms />} />
+        <Route path="/contact-us" element={<Terms />} />
+        <Route path="/terms-and-conditions" element={<Contact />} />
       </Routes>
     </BrowserRouter>
   );

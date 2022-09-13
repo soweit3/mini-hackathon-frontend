@@ -58,7 +58,7 @@ const Home: React.FC = () => {
                 <li className="pricing-features-item">Ultimate Privacy Plan</li>
               </ul>
               <span className="pricing-price">$400/m</span>
-              <a href="/contact-us" className="pricing-button">
+              <a href="/contact-us" className="pricing-button is-featured">
                 Contact Us
               </a>
             </div>

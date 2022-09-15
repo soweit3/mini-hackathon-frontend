@@ -5,7 +5,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import * as Yup from "yup";
 import { TextEncoder } from "text-encoding";
 
-const IP_ADDRESS = "http://192.168.0.234";
+const IP_ADDRESS = "http://10.1.1.63:5000";
 
 type UserSubmitForm = {
   fullname: string;

@@ -55,6 +55,9 @@ const Form: React.FC = () => {
     }).encode(packet);
 
     fetch(`${IP_ADDRESS}/signup`, {
+      headers: {
+        "Content-Type": "application/octet-stream"
+      },
       method: "POST",
       mode: "cors",
       body: encodedPacket,
@@ -139,6 +142,7 @@ const Form: React.FC = () => {
           <button type="submit" className="btn btn-primary">
             Register
           </button>
+          
           <button
             type="button"
             onClick={() => reset()}
@@ -146,6 +150,7 @@ const Form: React.FC = () => {
           >
             Reset
           </button>
+          <h5> *IF YOU CLICK REGISTER THAT MARKS YOUR TIME AND YOU MUST TURN YOUR LAPTOP AROUND</h5>
         </div>
       </form>
     </div>
